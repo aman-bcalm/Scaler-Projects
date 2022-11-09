@@ -1,0 +1,112 @@
+Netflix Data Exploration and Visualization
+
+Link to Solution.pdf on Google drive
+
+https://drive.google.com/file/d/1Xidm3JE5mjZlTS4fpHyC-69AxWPIxdKC/view?usp=sharing
+
+
+1)
+
+Problem Statement : Using the Netflix.csv data we can give Netflix data driven / quantitatitve insights on what they've done
+ so far. Based on what we get to know from this data analysis (frequency, correlation etc) we can let them know statistically
+ / graphically what is better for their business in the future based on a number of factors.
+ 
+For example: If we observe that TV shows in United States for the last 30 years are mostly haivng a length of 1 season then
+if a new TV show is launched it would be most apt to give it a length of 1 season as Netflix has been doing this most often
+and they would only repeat a practise that works for them and is successful and not something that doesn't work. Same with
+choosing the type of series to launch in a particular geography. The insights would have been very pointed / accurate if we
+would have also received a column describing the success rate for each TV show / Movie launched.
+
+
+Analysing basic metrics : There are basically 12 rows giving information about each show starting from 'show_id' to 'description'
+
+
+1) we can use dataframe.['column_name'].describe() to get a descrpitive statistical summary for each columns to begin with.
+2) Use the dataframe.count() to get no of non NA cells for each column
+3) Use dataframe.nunique() to count the number of unique values for each column. We can clearly see from this that there
+   are only two types of released content on Netlfix.
+4) Use dataframe.['country'].value_counts() and it lets us know that United States is the country with the most releases
+5) nt[nt['type'] == 'TV Show']['duration'].value_counts() to see that for TV Shows released globally '1 season' is the
+   most frequent length of the TV show and 17 seasons the least frequent.
+6) Using the describe on dataframe['release_year'] we can know that of the total content added most was released between
+    2013 and 2021 (approx 75%). The mean release year was 2014
+7) We can know in a particular country what type of content is a particular country and with what frequency
+    nt[nt['country'] == 'United States']['listed_in'].value_counts()
+8) There were 6131 movies added vs 2676 TV shows by netflix
+9) For TV shows we can see that December was the most frequent launch month, followed by July and September
+10) For directors we check for TV shows that are Reality TV and then see that we get only one director name as for most of
+    them the director name isn't given in the dataset
+
+   
+
+
+
+2. Observations on the shape of data
+
+1) Shape of data : 8807 rows and 12 columns .One row corresponding to each id and 12 columns giving details about each
+   release on Netflix
+2) Data types of all attributes : object and except column 'release_year' which is of type int
+
+
+
+
+
+
+6. Insights based on Non-Graphical and Visual Analysis:
+
+1. Comments on the range of attributes.
+
+1. show_id : 8807 unique values. Range from : s1 to s8807
+2. type : 2 unique values which are Movie and TV Show
+3. date_added : min value : Timestamp('2008-01-01 00:00:00')
+                max value : Timestamp('2021-09-25 00:00:00')
+4. release_year : min : 1925 and max : 2021
+
+other values are alphanumeric and we can know the unique count of them using nunique but cannot comment on the range
+
+
+2. Comments on the distribution of variables and the relationship between them:
+
+Date added : Not evenly distributed. Skewed towards range of 2017 to 2021
+Rating : Not evenly distributed. 4 rating account for most values
+Duration : Not evenly distributed. One outlier value '1 sesaon' with very high count
+
+
+Comments for each univariate and bivariate plots:
+
+Since I could not plot the bivariate plot hence only commenting on univariate plots
+
+Date added: Clearly visible from plots most of the content was added between 2017 and 2021
+Rating: TV-MA, TV-14 and R and the most frequent ratings and acoount for the most content
+Duration : 1 season is the most common range followed by 2 seasons and 90/91 minutes.
+Release year: mean is 2014 and 50% of the moves were released between 2013 and 2019
+
+
+7. Business insights:
+
+I make a presumption that what netflix only repeats what is wokring for them and discards what isn'that
+
+1) United stated is the most important country to do business followed by India. US owing to the per capita income and population
+   and India owing to its massive population
+2) Netflix as an OTP platform ash gained momentum post 2017 and since then has been releasing content quite aggressively.
+3) Netflix is targeted towards adults and not kids as can be seen from the ratings of the releases. TV-MA is most frequent.
+4) Long content length is too boring. 1 season is the best length followed by 90/91 mins standalone content.
+
+
+8. Recommendations:
+
+1) Duration : Focus must be on 1 season and 90/91 mins. For seasons it must be either 1,2 or 3 and unless the director is very sure
+   not more than 3 series.
+2) Release month : The last quarter (October to December) of each year is most suited for new launches as each year most launches
+   happen that year.
+3) Geography : Focus should be on English countries as the top three target countries US, India and UK are English speaking.
+4) United states (listed_in) : For US the documentaries and standup up comedy should be focused upon for new content
+5) Directors : The following directors should be engaged in decreasing order of precedence :
+   Rajiv Chilaka, Raúl Campos, Jan Suter, Marcus Raboy, Suhas Kadav , Jay Karas
+6) Cast :  The follwing cast should be engaged in decreasing order of precedence :
+   David Attenborough
+   Vatsal Dubey, Julie Tejwani, Rupa Bhimani, Jigna Bhardwaj, Rajesh Kava, Mousam, Swapnil
+   Samuel West
+   Jeff Dunham
+   David Spade, London Hughes, Fortune Feimster
+   

@@ -1,0 +1,141 @@
+Aerofit - Descriptive Statistics & Probability
+
+Google drive link :
+https://drive.google.com/file/d/1ub00YkafONph3NKubUeJMhoQojqSiZnM/view?usp=sharing
+
+https://drive.google.com/file/d/1ub00YkafONph3NKubUeJMhoQojqSiZnM/view?usp=sharing
+
+ 
+1) Problem Statement : Using the Aerofit_treadmill.csv data we can give Aerofit data driven / quantitatitve insights on what they've done
+   so far and what would work for them in the future. Based on what we get to know from this data analysis (frequency, correlation etc) we
+   can let them know statistically / graphically what is better for their business in the future based on a number of factors.
+
+   General reccomendations (what suits the entire product range) as well as specific reccomendations both can be provided.
+   
+
+
+   Conversion of categorical attributes to 'category' is not required; rest is done in the Jupyter notebook.
+   
+4) Missing value : There are no missing values
+   Outlier detection :
+    
+   1) Age: Last quartile is very big in range 33 to 50 relative to other quartiles hence 35+ can be considered outliers.
+   2) Education : Last quartile is very big in range 16 to 21 relative to other quartiles hence 20,21 can be considered
+      outliers as is also confirmed by the boxplot.
+   3) Usage : 6 and 7 are outliers lying in the last quartile which has a big range relative to others and also can be
+      confirmed from the BoxPlot
+   4) Fitness : 1 is an outlier as there are pdf at 1 as well as the frequency is very low. It is the minimum value of the
+      first quartile which is the biggest in this case.
+   5) Income : 50% of the values are in the range 44-58k. Above 58k as can be confirmed from the pairplots as well there
+       the number of buyers decreased and above 80k very sharply. So values above 80k can be considered outliers
+   6) Miles : Fourth or last quartile range is 114 to 360 which is very large. As can be clearly observed from the pairplot as
+              well values above 200 are clearly outliers.
+			  
+	
+              
+              
+5) Business Insights based on Non-Graphical and Visual Analysis
+    
+    1) Comments on the range of attributes :
+    
+    1) Age: 50% customers are in the range 24 to 33. Target customer should be from 20 to 35 as most buyers are in that range.
+    2) Education : 14, 16 and 18 values that need to be most focused on for sales in the range 14 to 18 rest don't contribute
+       much to sales.
+    3) Usage : 3 to 4 occur most often. We can consider the range 2 to 4 for the company that occurs most often and contributes
+       to 75% of the values.
+    4) Fitness : 1 is an outlier and the range 2 to 5 can be considered with special focus on 3
+    5) Income : Looking at the pairplots and Quartiles we can say that 30 to 70k is the range wherein most the values lie.
+    6) Miles : The last quartile is the biggest one rest all are fairly populated. Looking at pairplot we can say that the range
+       to be considered should be 20 to 210 as more than 75% values lie within this range.
+       
+       
+    2) Comments on the distribution of the variables and relationship between them :
+    
+    1) Distribution of variables : Most the variables seem to have a normal distribution with some amount of skewness towards
+       the left or right.
+       
+    1) Age : Normal left skewed
+    2) Education : Normal very slightly skewed to the left
+    3) Usage: Normal skewed to the left
+    4) Fitness : Normal with right skew
+    5) Income : Normal skewed to the left
+    6) Miles : Normal skewed to the left
+    
+    Relationship between them using pairplots (bivariate) :
+    
+    1) Age - Usage: The most frequent users are in the age group 20 to 35
+    2) Age - Income : As age increases the income tends to increases
+    3) Age - Miles : Most of the miles are covered by people in the age group 20 to 35
+    4) Education - Usage : Does not seem to be much of a correlation between them
+    5) Education - Fitness : Most educated people seem to be somewhat fit and very few are unfit i.e. 1 fitness rating
+    6) Usage - Age : inversely correlated variables
+    7) Usage - Fitness : Directly correlated. As usage increases so does fitness
+    8) Usage - Miles : Directly correlated. More the usage , the more miles are covered
+    9) Fitness - Miles : Directly correlated
+    10) Income - Education : Directly correlated
+    11) Income - Fitness : high income 80k plus people have high fitness mostly (mode) its 5
+    
+    etc
+    
+    Comments for each univariate and bivariate plot:
+    
+    1) Univariate
+    
+    1) Product : KP281 , KP481, KP 781 is the order of sales
+    2) Age : 20-21 to 35 is the age range of most buyers with special focus on the range 23 to 26 both inclusive
+    3) Education : 14, 16 and 18 are the most frequent values accounting for most of the distribution with 16 as the most
+       frequent.
+    4) Usage : 2,3,4 are the most frequent values and the values of the fitness variable decreasing linearly for values greater
+       than 4
+    5) Income : 30 to 70k is the range of income of of most users and with 50k range as the most frequent one
+    
+    
+    2) Comment on heatmaps
+    
+    1) for the Age, Usage and Fitness plot
+        
+        1) for 22 year olds the fitness is high but the usage low
+        2) Rest is normal observations
+        
+    2) for the Income, Usage and Fitness plot
+    
+        1) The most frequent income range 40 to 50k has low fitness (less than 3) and usage between 2 to 4 times a week
+    
+    3) for the Miles, Usage and Fitness
+    
+        1) Most people with fitness of 3 use the treadmill at in the range of 2 to 5 times and treadmill at least 100 miles a week
+        
+
+6) Reccomendations
+
+    1) Most with with high income also have high fitness. They tend to buy KP781. Also probability that a female buys
+       KP781 is very low. So KP781 should be targeted towards high income fitness enthusiast males.
+    2) Being a female the probability of buying KP281 is very high. Hence for females KP281 followed by KP481 should
+       be promoted aggressively and KP781 should not be promoted but kept in the range to make it complete keeping in mind
+       the enthusiasts.
+    3) Cities / neighborhoods which have the following majority demographic profile should be targeted :
+       Education  : 14 to 18
+       Age :  20 to 35
+       Income : 30 to 70k
+       Fitness : 3 to 5
+    4) Looking at the conditional probabilities the sales staff can be handed a chart wherein when a customer walks in
+       or in case of an online purchase once the age is known the right product can be suggested. For example for a 23 year
+       old the probability of buying a KP281 is 44% and for a 22 year old it is 57%. For a 28 year old the probability of
+       buying a KP281 is 67%.
+    5) Rare to moderate users can be suggested KP 281 or KP 481 and high frequency users can be suggested KP781.
+    6) For an online purchase or even for a walk in customer we can collect various data age, Gender, Usage, Fitness, Income etc
+       and since we are aware of all the conditional as well as marginal probabilities we  calculate for each product the probability
+       that the customer buys it and then reccomend him the products in the order suggested by the algorithm. In case lets say
+       for KP481 we get the probability to be 0.6 then we know that this is almost sure shot so to increase the sales we can even
+       offer a discount thus increasing lead conversion to customer time period.
+    7) For privacy conscious customers we can tweak the algorithms to work with the data columns / probabilities for only the data points
+       provided by the customer . So if the customer provided just age, income and fitness data then for him the algo would compute the
+       P(KP281) and P(KP481) and P(781) only based on the age, income and fitness of other customers who've bought this product before.
+    
+    
+    Lets say a 25 year old customer walks in with education 16 and rest of data he doesn't share with us then:
+    p(KP281) = P(KP281| age = 25)P(age = 25) + P(KP281 | fitness = 16) P(fitness = 16)
+    
+    same for KP481 and KP 781 and based on this we can suggest the product
+    
+    The more data we get the better our algo will get ofc !
