@@ -1,0 +1,57 @@
+Tech Mahindra - Anomaly Detection
+
+Google Drive link : https://drive.google.com/file/d/1pZwKBMn3SwNqG59M-TfAMof_R4750skg/view?usp=sharing
+
+
+1)
+Problem Statement : We are given data for fuel cells. We need to find the outliers in the data and bring them to the notice of the engineering team. Outliers would mean abnormal values observed for the fuel cell and the engineering team needs to pay attention to the outliers and study under what parameters they occur . For example if at a certain fuel cell capacity temperatures above a certain range give rise to outliers then at that particular capacity and temperature the engineering department needs to work and eliminate the outliers.
+
+Univariate and bivariate analysis are mentioned in the notebook as well with the graphs.
+Univariate analysis :
+1) Fuel cell 1,2,3 make up 27.% of the data and 4 makes up the remainder 18.8%
+2) Most of the cycle values lie between 25 and 125 both included
+3) Datetime :  Most values lie in 2008 . Month no 4,5,7 and 8 have most of the entries
+4) Capacity : Mostly lies between 1.4 and 1.8
+5) Voltage : Most values lie between 3 and 4. Peak around 3.5
+6) Current measured : Values are heavily clustered around 0 and -2
+7) Temperature measured : Most values lie between 25 and 40.  31(+/-) 2 are the most frequent values
+8) Current load : Most values heavily clustered around 2, then -2 and then 0. (Decreasing number of values across 2,-2,0)
+9) Voltage load : Most values are between 2 and 3. Almost normally distributed
+10) Time : Seem to follow a uniform distribution 0 and 3000 and then decreases sharply till 3500
+
+Bivariate analysis :
+1) DateTime and Time and inversely correlated.
+2)  Cycle and capacity are strongly inversely correlated.
+3)  Capacity and Datetime are moderately inversely correlated.
+4)  Capacity and Currentload are moderately inversely correlated.
+5) Voltage measured and temperature are strongly inversely correlated.
+6) Voltage measured and time are strongly inversely correlated.
+7) Current measured and voltage load are strongly inversely correlated.
+8) Temperature measured and voltage load are moderately correlated.
+9) Temperature measured and time are strongly correlated.
+10) Voltage load and time are moderately inversely correlated.
+
+
+4)
+
+Comparison of results from the above algorithms: 
+
+Results from Isolation Forest and Local outlier factor are used to plot  ScatterPlots for
+1) Temperature measured vs Time
+2) Temperature measured vs Time
+
+We can see that for each clubbing of two features using both algorithms we get almost same outliers. We can increase or decrease the threshold to choose outliers and tune it to get even the exact same result.
+
+In this case both algorithms work the same when it comes to detecting outliers.
+
+5) Actionable Insights & Recommendations : 
+
+Below would be some recommendations based on outliers for the engineering team to look into :
+1) Extremely high and extremely low temperature range give outliers for fuel cells . As capacity increases high temperatures tend to give big outliers.
+2) As time increases the temperature measured also increases. For high values of time the temperature give big and high number of outlier values.
+3) For voltage measured vs temperature :  High values of voltage and lower temperatures lead to big outliers.
+4) Voltage_measured vs time : High voltage and low time lead to extreme outliers
+5) Current measured vs Voltage Load : For very high values of current measured both low and high values of voltage load give big outliers
+
+We would need to report extreme / very big outliers to the engineering team to being with. Once they have been resolved then we can begin to move to report the moderate outliers and once they too have been resolved we can move to smaller outliers if need be. Depending on the sensitivity and the requirements of the engineering team this iterative process can go on.
+

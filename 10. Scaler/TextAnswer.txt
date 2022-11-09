@@ -1,0 +1,31 @@
+
+
+Problem statement :Given the data for various students from Scaler we need to apply clustering on the data so that we know two things :
+1) How many clusters can we divide them into
+2) Cluster the learners into various clusters.
+
+Once we have clustered the students into various clusters we know that students clustered into the same cluster have similar characteristics. We also know based on data collected that post Scaler what is the average CTC for various job profiles for the learners so we can tell the students belonging to a particular cluster how post completion of  Scaler their CTC would increase (it could be subject to change in job profile). Clustering most importantly helps us know that on the total how homogeneous or heterogeneous or data is based on various parameters. Based on that we can also know how to tailor the program in terms of placement assistance, course duration etc. Scaler using this data can start sub courses within courses for students belonging to same clusters.
+
+Univariate and bivariate analysis are mentioned in the notebook as well with the graphs
+Univariate analysis :
+1) Most of the leatners earn between 3 lacs and 20 lacs
+2) CTC was updated mostly in the year 2019, 2020 and 2021
+3) Most of the learners joined the companies is between 2014 to 2020 (both inclusive)
+4) Class : Most are in class 2 and 3
+5) Designation : Most have designation 2
+6) Tier : Tier 3 , 2, 1 and in decreasing order
+
+Bivariate analysis :
+1) Designation and tier are moderately correlated
+2) Class and tier are strongly correlated
+3) Designation and class are strognly correlated
+4) ctc is inversely corrrelated to both class and tier
+
+
+
+Actionable Insights & Recommendations: Post the clustering of data we are able to easily able to identify cadidates from similar clusters.
+1) Since we have previous data from Scaler regarding learning outcomes of students . For students belonging to similar cluster we can tell them where they would be in terms of CTC, job profile etc.
+2) For a cluster where most students have low tier, class , ctc and designation we can add more classes , remedial sessions etc. They are in bulk and need the most guidance.
+3) For students where most students have high CTC, class and designation we can add advanced options like extra projects, research, paid internship etc during course. They are also a good base to recruit mentors for future batches.
+4) The biggest will help Scaler identify what is the average profile of a learner and fine tune the course accordingly to get best output for learners. This could be done in many many ways.
+

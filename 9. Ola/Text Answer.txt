@@ -1,0 +1,67 @@
+OLA Ensemble Learning
+
+Google drive link : 
+
+1.
+Problem Statement : Give the data for drivers for Ola for various cities we need to determine / predict whether a driver will leave the company or not. We need also need the accuracy of our predictions. We need to tell the company what factors affect driver the most when it comes to staying with the company. In order to fool proof our predictions we use two approaches and see if the results are similar / overlap heavily. Once given all this Ola can tune / tailor their financial and administrative association with the drivers to focus on factors that lead to drivers staying with the company.
+
+
+Insights based on EDA are provided in the notebook as well.
+
+Insights based on EDA
+
+Univarite analysis done for continous variables :
+
+    Age :Most of the drivers are in the age group of 25-40
+    Earning per month :Most of the drivers earn between 25,000 to 80,000 a month.
+    Date of joining : Post 2018 Ola enrolled most of the drivers on the platform.
+    Last Wokring Date : we have in the range 2018-12-31 to 2020-12-28. Looking at the graph we can conclude that most months the number of drivers that leave the company is the at a constant rate.
+    Total business value : Has a big range. 50% of the values lie between 0 and 6.99 lacs. However some values are negative as well.
+    Gender : 0 gender has is over-represented
+    City : Almost all cities are euqally present with C26, C20 and C29 having slightly more counts than others. We cna say drivers are evenly distributed across cities
+    Education : drivers are evenly distrobuted across 0 , 1 and 2
+    Joining Designation : Mst drivers have designation 1. 50% drivers have designation either 1 or 2
+    Grade : 1,2 and 3 are the most common ones. 50% drivers of the drivers have either 1, 2 or 3
+    Mean Quarterly Rating : Most of the drivers have quartelry rating of 1.
+
+Bivariate analysis :
+
+    Quarterly Rating and Total business value are very strongly correlated.
+    Quarterly Rating and duration strongly correlated.
+    Grade and Income are strongly correalated
+    Grade and joining desgination are strongly correlated.
+    Total Business value and duration are strongly correlated.
+
+
+4.
+Comment on ROC AUC Curve :
+
+1) Bagging  using Random Forest Classifier :
+
+AUC of 0.94 which means the classification algorithm is excellent.
+
+Accuracy :  0.86
+f1 score :  0.92
+
+Both are good and the bagging classification works with high accuracy and f1 score
+
+2) Boosting with XGboost Classifier :
+
+AUC of 0.87 which means the classification algorithm is good.
+
+Accuracy  : 0.9
+f1 score : 0 .87
+
+Both are good and the bossting classification works with high accuracy and f1 score
+
+
+Actionable insights and recommendations :
+
+QR Increase : The quarterly rating of the driver increases monotonically (once increases remains the same or increases even more. It never decreases post an increase)
+
+QR increase, duration, total business value and joining designation are by far the most important factors which make a driver stay with a company.
+
+1) When onboarding new drivers Ola should try and maximize the number of drivers with higher joining designation.
+2) Ola should have financial policies , placement of the drivers and algorithm to match customers with drivers in the cities in such that total business value of drivers is maximized. The profile of customers and the trip distance they plan to undertake also matters in this regard. Constant monitoring of total business value for drivers is also important. In case it stagnates or decreases week on week or month on month then it is a signal that the driver might quit.
+3) Duration : The longer a driver is associated with Ola the higher the probability is likely to stay.  The company can introduce various schemes like rewards, free health insurance etc to hook the driver to Ola for longer durations. These are specially important when the driver is going through a lean phase earnings wise.
+4) QR increase : They are basically the star drivers for Ola. The company must take utmost care of these drivers and make sure that they stick to the company at all costs. The best / most paying customers should be allocated to them for rides. 
