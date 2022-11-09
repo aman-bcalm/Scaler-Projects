@@ -1,0 +1,50 @@
+Google drive link : https://drive.google.com/file/d/1yhs6Z40JRBFvr4ANHBEupwEe41ITaNFT/view?usp=sharing
+
+Problem Statement : For each individual/MSME whose data is provided we need to tell Jai Kisan whether the individual should be given the loan / credit line extended or not. Also we can tell the company which of the factors are the most important for the underwriting  and which factors are not. The repayment terms can also be articulated based on multiple factors like interest rate, annual income, number of open credit lines , number of public record bankruptcies. The more we can quantify form the data given that the user is likely to default the more stringent repayment terms.
+
+
+Tradeoff questions :
+1) Detect real defaulters and fewer false positives : Since SMOTE, Oversampling , Undersampling had been tried and yielded scores less than normal weighted logistic regression we need to adopt another approach. On other datasets these things can be tried but for me on this dataset they didn't work. A general approach to reduce misclassifications error by iteratively training models and reweighting rows (based on classification error) is boosting. This paper is gives some idea of logistic regression and boosting : https://hastie.su.domains/Papers/AdditiveLogisticRegression/alr.pdf  .
+
+2) NPA treatment : We need to make the model more precise. We see that right now the model lays heavy emphasis on emp_title and not much on loan amount. There is also more emphasis on address than on ownership, annual income, revolving credit. The weights for each variable are not correct right now. The current loan underwriting model of the bank is badly made. The loan underwriting model of the bank needs to be rebuilt and that is linear regression and then we can check through logistic regression.
+
+So the initial data that the bank generates or gets to build the loan underwriting model (linear regression) they need to be very sure about the  target variable in fact they could borrow data from a bank with low NPA or use agents on field who do manual underwriting and collection.
+
+Actionable insights and recommendations :
+1) Loan underwriting model of the bank is not a very strong one. They need to build a new one with proper weights assigned to relevant variables.
+2) Loan amount should have high weightage, employee title can be misleading and cannot be given such a high weightage etc. Weights need to be corrected.
+3) The bank can integrate the users' credit and debit card with its app. The usage and stats from this can help in determining credit score and that also can be used.
+4) CIBIL score of the user can also be used if present.
+5) Since by the ticket size of loan it seems the bank is more focussed on retail loans customer profiling using data like salary account, collateral amount etc can be used.
+
+
+Questionnaire:
+
+1) What percentage of customers have fully paid their Loan Amount?
+1) We cannot determine this accurately. Loan status just tells us whether loan has been approved or not. There is no stat that tells us what loan was paid back or not.
+we can presume false positives to be NPA then TP/TP+FP would be the required % : 81%
+
+2) Comment about the correlation between Loan Amount and Installment features.
+2) Loan amount is very strongly correlated to installment (0.97)
+
+3) The majority of people have home ownership as MORTGAGE
+
+4) People with grades ‘A’ are more likely to fully pay their loan : True
+
+5) Name the top 2 afforded job titles.
+5) Teacher and Manager (two most frequent)
+
+6) Thinking from a bank's perspective, which metric should our primary focus be on
+6) F1 score as it covers both precision and recall
+
+7) How does the gap in precision and recall affect the bank?
+7) High precision is always required and recall can be relatively lower that means fewer points generated. Low precision would lead to high NPAs and low recall would lead to low business volume.
+
+8) Which were the features that heavily affected the outcome?
+8) Based on the weights for each column : emp_title(very much) , annual_inc, int_rate, address
+
+9) Will the results be affected by geographical location? (Yes/No)
+9) The correlation between the target and the address is insignificant. But in logistic regression the weight for address is 0.1487 then the answer should be YES
+
+10) How does Over-sampling affect the model’s performance ?
+10) I tried oversampling as provided in the code as well but it did not improve scores of the logistic regression model. Strange ! 

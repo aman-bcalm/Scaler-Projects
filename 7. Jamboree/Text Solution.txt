@@ -1,0 +1,25 @@
+Problem Statement : The given dataset contains for each student 8 features/metrics and based on them the chance of admit into a  university. We need to help Jamboree better
+understand this data by letting them know quantitatively which feature is more important and contributes more to the chance of admit. We also need to sift the features which are 
+independent and those features that are redundant have to be removed.  At the end our analysis a student will know which of the features are the most important . He/She will also
+ know how important they are by a numerical factor i.e how much that particular feature contributes to his chance of admit. Useless features will be dropped
+
+
+5. Comments on the performance measures and if there is any need to improve the model or not
+
+The MAE, RMSE are slightly higher in the Training model to the Test model. Hence the model fit is correct
+R squared and adjusted R squared are also very marginally lower in the Test model relative to the Training model. As they capture about 80% of the variance hence the model is good
+
+R square is high enough and and the errors are small. The model is optimal and there is no need to improve it. Deleting more predictor variables is not feasible.
+
+6.
+1) Comments on significance of predictor variables
+
+CGPA is by far the most important predictor variable followed by, TOEFL and GRE score. Then comes LOR and Research. Rest of the variables are not important.
+
+2) Model improvement
+
+1) The model can be improved by further getting data about which stream the student is from and which stream is he applying to. So if an engineering graduate wants to enroll for MBA then we can see if he has a better chance than someone comes form a commerce background. This definitely accepts the chance of admit
+2) Gap years between last education received and date of applying can be added.
+3) Number of years of employment / community service can be added.
+4) Columns can be added for outstanding achievement like medals at olympiad, 12th board topper, college topper etc.
+

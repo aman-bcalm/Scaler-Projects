@@ -1,0 +1,3 @@
+Problem Statement : For each individual/MSME whose data is provided we need to tell Jai Kisan whether the individual should be given the loan / credit line extended or not. Also we can tell the company which of the factors are the
+ most important for the underwriting  and which factors are not. The repayment terms can also be articulated based on multiple factors like interest rate, annual income, number of open credit lines , number of public record 
+ bankruptcies. The more we can quantify form the data given that the user is likely to default the more stringent repayment terms. 
