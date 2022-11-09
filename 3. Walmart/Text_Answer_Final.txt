@@ -1,0 +1,134 @@
+Walmart - Confidence Interval and CLT
+
+Google Drive Link : https://drive.google.com/file/d/1OHwtvv4UHTI0razByLtH24hYRCwL6_C_/view?usp=sharing
+
+
+
+1. Defining Problem Statement and Analyzing basic metrics
+
+Problem statement : Using the walmart_data.csv data we can give Walmart data driven / quantitatitve insights based on various metrics and help them grow their revenue and decrease their costs .
+    We shall give them insights which will help them in more specific targeting of customers based on their gender, location type, previous purchases, occupation, age etc. We can also
+    to light the inefficiencies for example there are certain products which aren't bought very often, people of a certain occupation category that don't purchase often etc. In case they wish
+    to have a sale or special offers our data driven targeting shall help them tremendously to increase their sales.
+    
+    General recommendations (what suits the entire product range) as well as specific recommendations both can be provided.
+
+
+Mapping for conversion of categorical attributes to numerical data types
+
+Gender
+
+1 : Female
+0 : Male
+
+Age
+
+0-17    1
+18-25   2
+26-35   3
+36-45    4
+46-50    5
+51-55    6
+55+        7
+
+
+Stay in current city years:
+
+0    0
+1    1
+2    2
+3    3
+4+    5
+
+Product_ID : done using cat.codes as too many product IDs
+
+
+
+2. Missing value and outlier detection
+
+From IQR and boxplots it can be inferred that following are definitely the outliers :
+1) Product_Category : values greater than equal to 18
+2) Age : 6 and 7
+
+
+
+3. Business Insights based on Non- Graphical and Visual Analysis
+
+Comments on the range of attributes : For most attributes like Occupation, Product_ID, Product_Category etc there are certain values that occur more often than others thus contributing more. Hence certain parts
+                                      of that range are far more important. For example for Occupation the 0 to 10 range is the most important as values within it occur most often.
+
+
+Comments on the distribution of variables and the relationship between them : User_ID can be presumed to have a continuous uniform distribution. For all others there are certain values that contribute far more than others
+    as can be confirmed from value_counts and graphically. Hence they would have distribution with skewness towards the left or right depending on the particular variable in question.
+    
+Comments on each univariate and bivariate plot (Business insights included) :
+User_ID : Certain User_IDs definitely are more important / frequent but better to do that sorting with another parameter clubbed. Presuming has a uniform continous distribution.
+Product_ID : Product_IDS between 600 to 1200 are of importance and after that we can count all those that have a count of above 7500.
+Occupation : 0,1,4,7,17 all have counts greater than 4000 needed to be focused upon
+Purchase: There are certain non continuous bands that are ideally suited. [5000 to 10000], 15000 +-2000, 20000 +-2000, 25000+-2000
+
+Comments on the boxplots have been made in the outlier detection part.
+
+Heatmap : From the heatmap marital status with age shows a string correlation 0.31 rest are weak
+
+
+
+Pairpots :
+1) Gender : Most shoppers are male
+2) City Category : Almost evenly distributed
+3) Most users have marital status 0
+
+
+4. Answering the questions
+
+1. I presume one row to be one transaction
+
+   For men the average is 9437.5
+   For women the average is 8734.56
+   
+   Hence men are spending more per transaction than men.
+   Since in general there exits are general bias that for a same role males are paid more hence we can presume that; that bias is on display here and as such we have more male shoppers
+
+3. Confidence intervals overlapping (Male and Female)
+
+   There seems to be no sort of overlapping in average purchase price for males and females.
+   Walmart can use this information to make sure that when they launch products for males only what percentage of males they want to address and accordingly choose the CI interval of mean price. Same for female only
+   products.
+   
+   When launching products for both males and females like electronic gadgets if they want to target 68% of both then they can use the price range which overs the first confidence intervals for both males and
+   females completely. For males let the first (68%) CI be (u1, v1) and for females let it be (u2, v2) then the CI in this case will be ( min(u1,u2) , max(v1, v2)
+   
+4. Married and Unmarried
+
+    For Married and Unmarried there is a significant overlap in the average transaction Confidence intervals hence when launching new products or recalibrating prices Walmart need not pay much attention and any one
+    confidence interval category will work for both
+
+5. Age
+
+    Despite having different mean, standard deviations and margin of errors the first CI (68%) is the same for all age groups. Strange !
+
+
+
+
+6.  Illustrate the insights based on exploration and CLT
+
+    Insights based on CLT are as follows :
+    1) For Gender targeting based on average transaction value Walmart needs to work on pricing separately as has also been mentioned above in 4.3
+    2) For married and unmarried walmart need not pay much attention
+    3) For Age group as well Walmart needs to pay much attention when deciding the  pricing of new products
+    4) For combination of one or more factors they would need to look at either intersection and union of the intervals to reach some conclusions.
+    
+    So lets say Walmart needs to launch a new product for females between the age of 26-35 then they need to check the CIs calculated for females, the 26-35 CI and look for an intersection. If not they can
+    go for a union and then take the mean of the extremities.
+    
+7. Recommendations
+
+    1) Since there are more males and they on an average spend more it is better to launch high value products targeting males.
+    2) To increase the number of female users products in the price range 8701.32 to 8767.81. The introduction pricing should be lower than this band and once the user is a repeat user gradually it should be
+       adjusted so that it is in the price band.
+    3) Users with certain occupations buy more than others. They should be targeted more to increase sales.
+    4) Not all products have the same amount of sales. Products which are sold more(can be easily found) should be promoted more and discounted more often.
+    5) Alongwith the last point special emphasis should be paid to products in the categories : 1, 5 and 8 as they contribute most to sales
+    6) Some users are very frequent users. We can track them and offers them discounts, memberships, privileges etc to retain them and make them use it more often.
+    9) Users in the age category 3 and 4 should be targeted.
+    10) Users which have stayed in the current city for 1, 2 and 3 years should be targeted.
