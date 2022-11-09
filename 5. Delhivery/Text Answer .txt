@@ -1,0 +1,6 @@
+Delhivery Case Study
+
+1. Problem Statement : Given the data for Delhivery we need to analyze various parameters for a trip between source  and destination; study the data and see how the various parameters vary and if they are dependent
+ or independent of each other. Most common source and destinations need to be pointed out and then we can point how we can optimize some of the parameters between the source and destination like time taken.
+
+

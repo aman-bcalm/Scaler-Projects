@@ -1,0 +1,26 @@
+Google drive link : https://drive.google.com/file/d/1ZLbMw3i6a01gn2ktzKGEZZLcrrzzlTUZ/view?usp=sharing
+
+
+Problem statement :  Given the data from Apollo hospitals we need to infer which variables are related to hospitalization charges and which aren't.  We also need
+to check whether viral load and severity level are dependent on gender, age and smoking status of the patient. We also need to check if the variables present are correlated to each
+other ( independent or dependent) or not. Using this we can know if age effects the viral load, severity level related to age, severity level is related to viral load etc.
+
+To sum up we need to give a clear data centric view to Apollo hospitals about their hospitalization charges and what it depends on. Then we need to tell them about the relations between
+various variables if they exist and how they change with respect to one another.  With this not only the hospitalization charges but also the line of treatment can be altered. 
+
+
+
+Business Insights :
+1) As age increases the hospitalization charges increases.
+2) Smokers have higher hospitalization charges than non smokers. For same age and sex a smoker's hospitalization charge will be higher than for a non smoker.
+3) Viral load is independent of smoking, age , sex and severity level.
+4) Severity level is independent of viral load, smoking, age and sex.
+5) All regions contribute contribute equally to business.
+6) No linear relation between severity level and hospitalization charges. Charges increase from 1 to 3 and then decrease for 4 and 5
+
+Recommendations:
+1) For smokers and old people special care should be taken by the hospital that they either deposit some advance or have some insurance because they are the ones to have the highest hospital bills. Old smokers should be treated with extreme care and caution.
+2) Since viral load and severity level are not correlated and also not correlated (individually) to hospital charges so the hospital should not use them to segregate patients for various lines of treatment. A young patient with high viral load and high severity level is more likely to get well soon than an old patient with low viral load and low severity level. Age and smoking status are the most important factors while predicting the length of and cost of hospitalization.
+3) The hospital should tie up with am insurance company and in their day to day checkups and diagnostics the hospital should promote and sell health insurance to smokers and old people making them aware of the risks they face. That would make them insured and also hospital can earn commission. Based on age and smoking level/lung condition various insurance cover plans can be promoted.
+4) Marketing campaigns and new outreach initiatives should be foccussed on all regions equally.
+5) Marketing campaign and new outreach initiatives should target smokers and old people as it is better that they are most protected by vaccinations , medicines etc and hospital also earns . This way hospitalization can be preempted for the most at risk part of the population. 
